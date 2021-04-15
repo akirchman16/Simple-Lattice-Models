@@ -45,7 +45,7 @@ for w = w_values
     end
 
     figure(2);
-    plot(x,Y_C,'LineWidth',2);
+    plot(x,Y_C,'L);
     hold on;
 end
 figure(2);
