@@ -16,7 +16,7 @@ close all;
 % N+1) in order for the code to check the binding location type.
 
 
-N = 1000;    %length of DNA lattice
+N = 8660;    %length of DNA lattice
 n = 5;      %protein length
 k_on = 1;   %kinetic rate constant for binding
 k_off = 1;  %kinetic rate constant for unbinding
