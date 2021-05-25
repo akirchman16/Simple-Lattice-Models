@@ -18,10 +18,10 @@ close all;
 
 N = 8660;    %length of DNA lattice
 n = 3;      %protein length
-k_on = 0.1;   %kinetic rate constant for binding
+k_on = 1;   %kinetic rate constant for binding
 k_off = 1;  %kinetic rate constant for unbinding
 w = 1;  %co-operativity parameter
-L = 8;  %concentration of free proteins
+L = 2;  %concentration of free proteins
 
 dt = 0.01;     %small time step required for probability calculations
 
@@ -34,7 +34,7 @@ end
 
 K = k_on/k_off; %calculates equilibrium constant
 
-Iterations = 500;  %how many binding/unbinding loops to run
+Iterations = 1.25/dt;  %how many binding/unbinding loops to run
 
 DNA = zeros(1,N+2);   %array to model DNA lattice with 'dummy zeros' on each end
 currentBound = zeros(1,N+2);  %allocate memory for currentBound array with 'dummy zeros'
