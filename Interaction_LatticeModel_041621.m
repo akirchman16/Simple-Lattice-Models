@@ -1,4 +1,4 @@
-clear all;
+clearvars;
 close all;
 
 % This code will randomly bind and unbind proteins to a DNA lattice
