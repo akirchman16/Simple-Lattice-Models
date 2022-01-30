@@ -21,15 +21,16 @@ n = 5;      %protein length
 k_on = 1;   %kinetic rate constant for binding
 k_off = 1;  %kinetic rate constant for unbinding
 K = k_on/k_off; %calculates equilibrium constant
-w = 3;  %co-operativity parameter
+w = 0.1;  %co-operativity parameter
 
-Iterations = 500;  %how many binding/unbinding loops to run
+Iterations = 200;  %how many binding/unbinding loops to run
+
+dt = 0.01;     %small time step required for probability calculations
 
 for i = 1:1000    %for loop to vary L (free protein concentration)
     DNA = zeros(1,N+2);   %array to model DNA lattice with 'dummy zeros' on each end
     currentBound = zeros(1,N+2);  %allocate memory for currentBound array with 'dummy zeros'
     L(i) = i/400;   %stores values for L
-    dt = 0.01;     %small time step required for probability calculations
     BindHist = 0;   %resets BindHist for each loop of binding/unbinding events
     BindCounter = 0;    %counts how many binding events occur
     isolBindCounter = 0;    %counts isolated binding events
@@ -108,7 +109,7 @@ xlabel('v');
 xlim([0 1/n]);
 ylabel('v/L');
 ylim([0 2*K]);
-title('Scatchard Plot');
+title('Scatchard Plot'); box on;
 legend('Simulation','McGhee & von Hippel Model');
 
 % cftool;         %opens cftool to fit a curve to the data points in Scatchard plot
